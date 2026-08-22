@@ -1,16 +1,16 @@
 # Исследование продаж Ozon — бренд Aura
 
-### 1. Выручка по категориям товара
+1. Выручка по категориям товара
 
 ```sql
 SELECT category
-	  , round(sum(order_amount) ::numeric, 2) as total_sum
-    , round((sum(item_cnt) ::numeric), 0) as total_cnt
+    , round(sum(order_amount)::numeric, 2) as total_sum
+    , round((sum(item_cnt)::numeric), 0) as total_cnt
 FROM DATA
 WHERE status = 'Доставлен'
 GROUP BY category
 ORDER BY total_sum desc
-
+```
 
 | category | total_sum | total_cnt |
 | :--- | :--- | :--- |

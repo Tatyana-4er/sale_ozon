@@ -58,6 +58,7 @@ SELECT  CASE to_char(to_timestamp(date_of_receipt, 'DD.MM.YYYY'), 'ID')
 FROM data
 WHERE status = 'Доставлен'
 GROUP by day_name
+ORDER BY cnt_order desc
 ```
 | day_name | cnt_order |
 | :--- | :--- |

@@ -207,7 +207,7 @@ WHERE status = 'Отменён'
 ```sql
 SELECT status
     , ROUND(AVG(EXTRACT(EPOCH FROM (
-        TO_TIMESTAMP(COALESCE(NULLIF(delivery_date, ''), cancellation_date), 'DD.MM.YYYY HH24:MI') 
+        TO_TIMESTAMP(COALESCE(NULLIF(delivery_date, ''), cancellation_dat), 'DD.MM.YYYY HH24:MI') 
         - TO_TIMESTAMP(date_of_handover, 'DD.MM.YYYY HH24:MI')
       )) / 3600), 1) AS transit_time_hours
 FROM data
